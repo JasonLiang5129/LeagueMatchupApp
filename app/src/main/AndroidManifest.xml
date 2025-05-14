@@ -13,10 +13,10 @@
         android:theme="@style/Theme.AndroidCpp"
         tools:targetApi="31">
         <activity
-            android:name="com.example.androidCpp.MatchupsScreen"
+            android:name="com.example.androidCpp.Screens.MatchupsScreen"
             android:exported="false" />
         <activity
-            android:name="com.example.androidCpp.MainActivity"
+            android:name="com.example.androidCpp.Screens.StartScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

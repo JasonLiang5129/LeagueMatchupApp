@@ -1,4 +1,4 @@
-package com.example.androidCpp;
+package com.example.androidCpp.Classes;
 
 public class Cmp {
     int cmpIcon;
