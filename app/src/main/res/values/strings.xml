@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AndroidCpp</string>
+    <string name="champion_matchups">Champion Matchups</string>
+
+    <string-array name="champion_names">
+        <item>Champ 1</item>
+        <item>Champ 2</item>
+        <item>Champ 3</item>
+        <item>Champ 4</item>
+        <item>Champ 5</item>
+
+    </string-array>
+</resources>
