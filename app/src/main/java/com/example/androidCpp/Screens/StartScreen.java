@@ -18,11 +18,11 @@ public class StartScreen extends AppCompatActivity {
 
         Button champMatchupButton = findViewById(R.id.champ_matchup_button);
 
-        champMatchupButton.setOnClickListener(v -> openMatchupsScreen());
+        champMatchupButton.setOnClickListener(v -> openRolesScreen());
     }
 
-    private void openMatchupsScreen() {
-        Intent intent = new Intent(this, MatchupsScreen.class);
+    private void openRolesScreen() {
+        Intent intent = new Intent(this, RolesScreen.class);
         startActivity(intent);
     }
 }

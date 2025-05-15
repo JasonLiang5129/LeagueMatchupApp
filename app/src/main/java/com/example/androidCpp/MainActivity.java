@@ -5,25 +5,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.example.androidcpp.databinding.StartScreenBinding;
-
 public class MainActivity extends AppCompatActivity {
+
+    public static String playerRole;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+//        // Example of a call to a native method
+//        TextView tv = binding.sampleText;
+//        tv.setText(stringFromJNI());
+    }
 
     // Used to load the 'androidCpp' library on application startup.
     static {
         System.loadLibrary("androidCpp");
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public static String getPlayerRole() {
+        return playerRole;
+    }
 
-        StartScreenBinding binding = StartScreenBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
-        // Example of a call to a native method
-        TextView tv = binding.sampleText;
-        tv.setText(stringFromJNI());
+    public static void setPlayerRole(String playerRole) {
+        MainActivity.playerRole = playerRole;
     }
 
     /**
