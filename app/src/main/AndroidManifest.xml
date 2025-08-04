@@ -11,12 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidCpp"
-        tools:targetApi="31">
+        >
+        <activity
+            android:name="com.example.androidCpp.Screens.OpponentCmpScreen"
+            android:exported="false" />
         <activity
             android:name="com.example.androidCpp.Screens.RolesScreen"
             android:exported="false" />
         <activity
-            android:name="com.example.androidCpp.Screens.MatchupsScreen"
+            android:name="com.example.androidCpp.Screens.PlayerCmpScreen"
             android:exported="false" />
         <activity
             android:name="com.example.androidCpp.Screens.StartScreen"

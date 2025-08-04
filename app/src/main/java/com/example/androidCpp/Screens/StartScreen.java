@@ -4,9 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
+import com.example.androidCpp.Classes.Cmp;
+import com.example.androidCpp.MainActivity;
 import com.example.androidcpp.R;
 
 public class StartScreen extends AppCompatActivity {
@@ -18,7 +19,15 @@ public class StartScreen extends AppCompatActivity {
 
         Button champMatchupButton = findViewById(R.id.champ_matchup_button);
 
+        setupChampsList();
         champMatchupButton.setOnClickListener(v -> openRolesScreen());
+    }
+
+    private void setupChampsList() {
+        String[] championNames = getResources().getStringArray(R.array.champion_names);
+        for (int i = 0; i < championNames.length; i++) {
+            MainActivity.championsList.add(new Cmp(MainActivity.championIcons[i], championNames[i]));
+        }
     }
 
     private void openRolesScreen() {

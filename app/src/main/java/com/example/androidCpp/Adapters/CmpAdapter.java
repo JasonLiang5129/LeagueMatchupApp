@@ -1,17 +1,23 @@
 package com.example.androidCpp.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.androidCpp.Classes.Cmp;
+import com.example.androidCpp.MainActivity;
+import com.example.androidCpp.Screens.OpponentCmpScreen;
+import com.example.androidCpp.Screens.PlayerCmpScreen;
 import com.example.androidcpp.R;
 
 import java.util.ArrayList;
@@ -38,17 +44,19 @@ public class CmpAdapter extends RecyclerView.Adapter<CmpAdapter.cmpViewHolder> {
         // Assigning values to the items in the recyclerView as they are being inflated
         holder.champIcon.setImageResource(championsList.get(position).getCmpIcon());
         holder.champName.setText(championsList.get(position).getCmpName());
-        holder.champName.setTextColor(R.color.black);
+        holder.champName.setTextColor(ContextCompat.getColor(context, R.color.black));
 
-        holder.champItemLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (holder.champName.getCurrentTextColor() == R.color.black) {
-                    holder.champName.setTextColor(R.color.teal_200); // TODO currently a placeholder for something that indicates the champ was clicked/selected
-                }
-                else {
-                    holder.champName.setTextColor(R.color.black);
-                }
+        holder.champItemLayout.setOnClickListener(v -> {
+            if (context instanceof PlayerCmpScreen) { // making sure we don't open opponentCmpScreen if the context is already opponentCmpScreen
+                MainActivity.setPlayerCmp(championsList.get(holder.getAdapterPosition())); // sets the player champ in MainActivity to the one that the user clicked on
+                Toast toast = Toast.makeText(context, "set player cmp", Toast.LENGTH_SHORT);
+                toast.show();
+                openOpponentCmpScreen(v);
+            }
+            else {
+                MainActivity.setOpponentCmp(championsList.get(holder.getAdapterPosition())); // sets the opponent champ "
+                Toast toast = Toast.makeText(context, "set opponent cmp", Toast.LENGTH_SHORT);
+                toast.show();
             }
         });
     }
@@ -72,5 +80,11 @@ public class CmpAdapter extends RecyclerView.Adapter<CmpAdapter.cmpViewHolder> {
             champIcon = itemView.findViewById(R.id.champ_icon);
             champName = itemView.findViewById(R.id.champ_name);
         }
+    }
+
+    public void openOpponentCmpScreen(View v) {
+        Context context = v.getContext();
+        Intent intent = new Intent(context, OpponentCmpScreen.class);
+        context.startActivity(intent);
     }
 }

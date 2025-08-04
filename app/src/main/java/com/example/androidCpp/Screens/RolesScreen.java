@@ -1,11 +1,9 @@
 package com.example.androidCpp.Screens;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -27,7 +25,7 @@ public class RolesScreen extends AppCompatActivity {
 
         topButton.setOnClickListener(v -> {
             MainActivity.setPlayerRole("top");
-            openMatchupsScreen();
+            openPlayerCmpScreen();
 
             Toast toast = Toast.makeText(this, "top", Toast.LENGTH_SHORT);
             toast.show();
@@ -35,7 +33,7 @@ public class RolesScreen extends AppCompatActivity {
 
         jglButton.setOnClickListener(v -> {
             MainActivity.setPlayerRole("jgl");
-            openMatchupsScreen();
+            openPlayerCmpScreen();
 
             Toast toast = Toast.makeText(this, "jgl", Toast.LENGTH_SHORT);
             toast.show();
@@ -43,7 +41,7 @@ public class RolesScreen extends AppCompatActivity {
 
         midButton.setOnClickListener(v -> {
             MainActivity.setPlayerRole("mid");
-            openMatchupsScreen();
+            openPlayerCmpScreen();
 
             Toast toast = Toast.makeText(this, "mid", Toast.LENGTH_SHORT);
             toast.show();
@@ -51,7 +49,7 @@ public class RolesScreen extends AppCompatActivity {
 
         botButton.setOnClickListener(v -> {
             MainActivity.setPlayerRole("bot");
-            openMatchupsScreen();
+            openPlayerCmpScreen();
 
             Toast toast = Toast.makeText(this, "bot", Toast.LENGTH_SHORT);
             toast.show();
@@ -59,15 +57,15 @@ public class RolesScreen extends AppCompatActivity {
 
         supButton.setOnClickListener(v -> {
             MainActivity.setPlayerRole("sup");
-            openMatchupsScreen();
+            openPlayerCmpScreen();
 
             Toast toast = Toast.makeText(this, "sup", Toast.LENGTH_SHORT);
             toast.show();
         });
     }
 
-    private void openMatchupsScreen() {
-        Intent intent = new Intent(this, MatchupsScreen.class);
+    private void openPlayerCmpScreen() {
+        Intent intent = new Intent(this, PlayerCmpScreen.class);
         startActivity(intent);
     }
 }
