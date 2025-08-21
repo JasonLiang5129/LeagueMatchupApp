@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.androidCpp.Classes.Cmp;
 import com.example.androidCpp.MainActivity;
+import com.example.androidCpp.Screens.GuideSearchScreen;
 import com.example.androidCpp.Screens.OpponentCmpScreen;
 import com.example.androidCpp.Screens.PlayerCmpScreen;
 import com.example.androidcpp.R;
@@ -49,14 +50,13 @@ public class CmpAdapter extends RecyclerView.Adapter<CmpAdapter.cmpViewHolder> {
         holder.champItemLayout.setOnClickListener(v -> {
             if (context instanceof PlayerCmpScreen) { // making sure we don't open opponentCmpScreen if the context is already opponentCmpScreen
                 MainActivity.setPlayerCmp(championsList.get(holder.getAdapterPosition())); // sets the player champ in MainActivity to the one that the user clicked on
-                Toast toast = Toast.makeText(context, "set player cmp", Toast.LENGTH_SHORT);
-                toast.show();
+                Toast.makeText(context, "set player cmp", Toast.LENGTH_SHORT).show();
                 openOpponentCmpScreen(v);
             }
             else {
                 MainActivity.setOpponentCmp(championsList.get(holder.getAdapterPosition())); // sets the opponent champ "
-                Toast toast = Toast.makeText(context, "set opponent cmp", Toast.LENGTH_SHORT);
-                toast.show();
+                Toast.makeText(context, "set opponent cmp", Toast.LENGTH_SHORT).show();
+                openGuideSearchScreen(v);
             }
         });
     }
@@ -85,6 +85,12 @@ public class CmpAdapter extends RecyclerView.Adapter<CmpAdapter.cmpViewHolder> {
     public void openOpponentCmpScreen(View v) {
         Context context = v.getContext();
         Intent intent = new Intent(context, OpponentCmpScreen.class);
+        context.startActivity(intent);
+    }
+
+    public void openGuideSearchScreen(View v) {
+        Context context = v.getContext();
+        Intent intent = new Intent(context, GuideSearchScreen.class);
         context.startActivity(intent);
     }
 }

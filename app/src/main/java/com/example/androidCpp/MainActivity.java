@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     public static String playerRole;
     public static Cmp playerCmp;
     public static Cmp opponentCmp;
+    public static double currentPatchVersion = 25.17;
 
     public static final int[] championIcons = {R.drawable.ic_launcher_background, R.drawable.ic_launcher_background, R.drawable.ic_launcher_background,
             R.drawable.ic_launcher_background, R.drawable.ic_launcher_background, R.drawable.ic_launcher_background,
@@ -52,6 +53,14 @@ public class MainActivity extends AppCompatActivity {
 
     public static void setOpponentCmp(Cmp opponentCmp) {
         MainActivity.opponentCmp = opponentCmp;
+    }
+
+    public static double getCurrentPatchVersion() {
+        return currentPatchVersion;
+    }
+
+    public static void setCurrentPatchVersion(double currentPatchVersion) {
+        MainActivity.currentPatchVersion = currentPatchVersion;
     }
 
     // Used to load the 'androidCpp' library on application startup.

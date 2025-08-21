@@ -27,40 +27,35 @@ public class RolesScreen extends AppCompatActivity {
             MainActivity.setPlayerRole("top");
             openPlayerCmpScreen();
 
-            Toast toast = Toast.makeText(this, "top", Toast.LENGTH_SHORT);
-            toast.show();
+            Toast.makeText(this, "top", Toast.LENGTH_SHORT).show();
         });
 
         jglButton.setOnClickListener(v -> {
             MainActivity.setPlayerRole("jgl");
             openPlayerCmpScreen();
 
-            Toast toast = Toast.makeText(this, "jgl", Toast.LENGTH_SHORT);
-            toast.show();
+            Toast.makeText(this, "jgl", Toast.LENGTH_SHORT).show();
         });
 
         midButton.setOnClickListener(v -> {
             MainActivity.setPlayerRole("mid");
             openPlayerCmpScreen();
 
-            Toast toast = Toast.makeText(this, "mid", Toast.LENGTH_SHORT);
-            toast.show();
+            Toast.makeText(this, "mid", Toast.LENGTH_SHORT).show();
         });
 
         botButton.setOnClickListener(v -> {
             MainActivity.setPlayerRole("bot");
             openPlayerCmpScreen();
 
-            Toast toast = Toast.makeText(this, "bot", Toast.LENGTH_SHORT);
-            toast.show();
+            Toast.makeText(this, "bot", Toast.LENGTH_SHORT).show();
         });
 
         supButton.setOnClickListener(v -> {
             MainActivity.setPlayerRole("sup");
             openPlayerCmpScreen();
 
-            Toast toast = Toast.makeText(this, "sup", Toast.LENGTH_SHORT);
-            toast.show();
+            Toast.makeText(this, "sup", Toast.LENGTH_SHORT).show();
         });
     }
 

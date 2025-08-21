@@ -10,8 +10,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AndroidCpp"
-        >
+        android:theme="@style/Theme.AndroidCpp">
+        <activity
+            android:name="com.example.androidCpp.Screens.GuideSearchScreen"
+            android:exported="false" />
         <activity
             android:name="com.example.androidCpp.Screens.OpponentCmpScreen"
             android:exported="false" />
